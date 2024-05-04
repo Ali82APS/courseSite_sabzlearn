@@ -39,4 +39,21 @@ i {
 }
 
 /* Finish Default Style */
+/* 808088088080800808808008080808080088080080808080808088 */
+/* Start Navbar style  */
 
+.main-header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+}
+
+/* ~~~~~~~~~~~~mainHeaderRight */
+
+
+
+/* ~~~~~~~~~~~~mainHeaderLeft */
+
+
+/* Finish Navbar style  */
