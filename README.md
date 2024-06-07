@@ -1,2 +1,2 @@
 next push: 
->>> complete `html & css` pats
+>>> complete `html & css` parts
