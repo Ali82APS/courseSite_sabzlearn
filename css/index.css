@@ -416,40 +416,84 @@ i {
 }
 /* Finish Newest Courses */
 
-/* start Helper classes */
-.title{
+
+/* start About us styles */
+.about-us{
+    margin: 6rem 0;
+}
+.about-us__header{
+    display: flex;
+    flex-direction: column;
+}
+.about-us__title{
+
+}
+.about-us__subtitle{
+    color: #9c9c9c;
+    font-size: 1.5rem;
+}
+
+.about-us__box{
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 2rem 0;
+    padding: 2rem 1.5rem;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+.about-us__icon{
+    color: #666;
+    font-size: 6.5rem;
+}
+.about-us__box-left{
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+}
+.about-us__box-title{
     font-weight: bold;
-    font-size: 2.3rem;
-    color: #444446;
-    line-height: 1.2;
-    position: relative;
+    font-size: 1.8rem;
 }
-.title::before{
-    content: '';
-    position: absolute;
-    right: -1rem;
-    width: 0.4rem;
-    height: 4.4rem;
-    background-color: var(--primary-color);
-    border-radius: 5rem;
-    -webkit-border-radius: 5rem;
-    -moz-border-radius: 5rem;
-    -ms-border-radius: 5rem;
-    -o-border-radius: 5rem;
-    transform: rotate(8deg);
-    -webkit-transform: rotate(8deg);
-    -moz-transform: rotate(8deg);
-    -ms-transform: rotate(8deg);
-    -o-transform: rotate(8deg);
-}
-.title::after{
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0.4rem;
-    width: 100%;
-    max-width: 250px;
-    height: 60%;
-    background-color: rgba(43, 266, 86, 0.1);
-}
-/* finish Helper classes */
+/* finish About us styles */
+
+    /* start Helper classes */
+    .title{
+        font-weight: bold;
+        font-size: 2.3rem;
+        color: #444446;
+        line-height: 1.2;
+        position: relative;
+    }
+    .title::before{
+        content: '';
+        position: absolute;
+        right: -1rem;
+        width: 0.4rem;
+        height: 4.4rem;
+        background-color: var(--primary-color);
+        border-radius: 5rem;
+        -webkit-border-radius: 5rem;
+        -moz-border-radius: 5rem;
+        -ms-border-radius: 5rem;
+        -o-border-radius: 5rem;
+        transform: rotate(8deg);
+        -webkit-transform: rotate(8deg);
+        -moz-transform: rotate(8deg);
+        -ms-transform: rotate(8deg);
+        -o-transform: rotate(8deg);
+    }
+    .title::after{
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0.4rem;
+        width: 100%;
+        max-width: 250px;
+        height: 60%;
+        background-color: rgba(43, 266, 86, 0.1);
+    }
+    /* finish Helper classes */
