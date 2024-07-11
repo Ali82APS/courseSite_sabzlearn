@@ -8,10 +8,11 @@
 @import './pagination.css';
 @import './footer.css';
 
+
+/* Start Breadcrumb Styles */
 .breadcrumb {
     margin-bottom:  2rem;
 }
-
 .breadcrumb__content {
     display: flex;
     background-color: #f0f2f7;
@@ -22,7 +23,6 @@
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 }
-
 .breadcrumb__home-content-icon {
     display: flex;
     align-items: center;
@@ -59,3 +59,125 @@
     font-size: 1.5rem;
     margin: 0.7rem;
 }
+/* Finish Breadcrumb Styles */
+
+/* Start Course main info styles */
+    .course-info {
+        margin-bottom: 6rem;
+    }
+    .course-info__link{
+        font-size: 1.2rem;
+        color: var(--primary-color);
+        padding: 0.4rem 1rem;
+        background-color: rgba(43, 206, 86, 0.2);
+        border-radius: 0.2rem;
+        -webkit-border-radius: 0.2rem;
+        -moz-border-radius: 0.2rem;
+        -ms-border-radius: 0.2rem;
+        -o-border-radius: 0.2rem;
+}
+.course-info__title{
+    margin: 2rem 0;
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: #464749;
+}
+.course-info__text{
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+    color: #7b868a;
+}
+.course-info__social-media-item{
+    color: #b1bbbf;
+    margin-left: 1.7rem;
+    transition: all 400ms ease;
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -ms-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    -webkit-transition: all;
+}
+.course-info__icon{
+    font-size: 2rem;
+}
+
+.course-info__video{
+    width: 100%;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+/* Finish Course main info styles */
+
+/* Start Main Info Section styles */
+.course-boxes__box{
+    display: flex;
+    padding: 1.8rem 2rem;
+    margin: 1rem 0;
+    box-shadow: 0 5px 30px rgba(70, 72, 77, 0.08);
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+.course-boxes__box-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.course-boxes__box-right-icon{
+    color: var(--primary-color);
+    font-size: 3.5rem;
+}
+.course-boxes__box-left{
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.5rem;
+}
+.course-boxes__box-left-title,
+.course-boxes__box-left-subtitle{
+    font-size: 1.6rem;
+    color: #7d7e7f; 
+}
+/* Finish Main Info Section styles */
+
+/* Start course progressbar */
+.course-progress{
+    background-color: #f0f2f7;
+    padding: 2rem 2rem 1.2rem 2rem;
+    margin: 3rem 0;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+.course-progress__header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.course-progress__icon{
+    font-size: 2.5rem;
+    color: #7b868a;
+}
+.course-progress__title{
+    margin-right: 1.5rem;
+    color: #7b868a;
+    font-size: 1.5rem;
+}
+.course-progress__bar{
+    height: 1rem;
+    border-radius: 10rem;
+    -webkit-border-radius: 10rem;
+    -moz-border-radius: 10rem;
+    -ms-border-radius: 10rem;
+    -o-border-radius: 10rem;
+}
+.progress-bar{
+    background-color: #1fbd50;
+}
+/* Finish course progressbar */
