@@ -1,5 +1,6 @@
 @import './fonts.css';
 @import './reset.css';
+@import './helper.css';
 @import './variable.css';
 @import './top-bar.css';
 @import './navbar.css';
@@ -181,3 +182,182 @@
     background-color: #1fbd50;
 }
 /* Finish course progressbar */
+
+/* start Course Introduction Styles */
+.introduction{
+    padding: 3rem;
+    box-shadow: 0 0 13px 8px rgba(70, 72, 77, 0.08);
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+
+.introduction__img{
+    margin-top: 3rem;
+    display: block;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+.introduction__text{
+    margin: 2rem 0;
+    color: #7a7a7a;
+    font-size: 1.5rem;
+}
+.introduction__btns{
+    margin-top: 4rem;
+}
+.introduction__btns-item{
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+.introduction__btns-item:hover{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+/* Finish Course Introduction Styles */
+
+/* Start Course Accordion Styles */
+.introduction__topic{
+    margin-top: 4rem;
+}
+.accordion{
+    margin-bottom: 2rem;
+}
+.accordion-item,
+.accordion-button{
+    background-color: #f7f9fa;
+}
+.accordion-button{
+    font-size: 1.5rem;
+    padding: 1.25rem;
+}
+.accordion-button:not(.collapse){
+    background-color: #f7f9fa;
+}
+.accordion-button::after{
+    position: absolute;
+    left: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    background-position: center;
+}
+.introduction__accordion-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.25rem;
+}
+.introduction__accordion-right{
+    display: flex;
+    align-items: center;
+}
+.introduction__accordion-count{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px solid #bfbfbf;
+    color: #656464;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.introduction__accordion-icon{
+    margin: 0 1.5rem;
+    color: #939aa3;
+    font-size: 1.8rem;
+}
+.introduction__accordion-link{
+    color: #161616;
+}
+.introduction__accordion-time{
+    color: #7a7a7a;
+}
+
+/* Finish Course Accordion Styles */
+
+/* Start Teacher Details styles */
+.teacher-details{
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 0 13px 1px rgba(70, 72, 77, 0.08);
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+.teacher-details__header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.teacher-details__header-right{
+    display: flex;
+    align-items: center;
+}
+.teacher-details__header-img{
+    width: 62px;
+    height: auto;
+    box-shadow: 2px 2px 20px #00000021;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.teacher-details__header-titles{
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
+}
+.teacher-details__header-link{
+    text-decoration: none;
+    color: #7b868a;
+}
+.teacher-details__header-skill{
+    color: #7b868a;
+    font-size: 1.2rem;
+}
+.teacher-details__header-left{
+    display: flex;
+    align-items: center;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+.teacher-details__header-icon{
+    font-size: 1.8rem;
+}
+.teacher-details__header-name{
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-right: 0.4rem;
+}
+.teacher-details__footer{
+    margin-top: 1rem;
+    color: #7b868a;
+    font-size: 14px;
+}
+/* Finish Teacher Details styles */
