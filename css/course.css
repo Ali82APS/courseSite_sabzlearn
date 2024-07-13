@@ -1,14 +1,16 @@
-@import './fonts.css';
 @import './reset.css';
-@import './helper.css';
+@import './fonts.css';
 @import './variable.css';
+@import './helper.css';
 @import './top-bar.css';
 @import './navbar.css';
 @import './course-box.css';
 @import './default.css';
-@import './pagination.css';
+@import './breadcrumb.css';
 @import './sidebarCoursesBox.css';
+@import './pagination.css';
 @import './footer.css';
+
 
 
 
@@ -60,6 +62,10 @@
 /* Finish Course main info styles */
 
 /* Start Main Info Section styles */
+.course{
+    margin-bottom: 3rem;
+}
+
 .course-boxes__box{
     display: flex;
     padding: 1.8rem 2rem;
