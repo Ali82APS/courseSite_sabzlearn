@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
   typeWriter(landingText, typeIndex);
   makeCounter(40, landingCoursesCount);
   makeCounter(3_320, landingMinutesCount);
-  makeCounter(31_371, landingUsersCount);
+  makeCounter(3_371, landingUsersCount);
 });
 
 function typeWriter(text, index) {
