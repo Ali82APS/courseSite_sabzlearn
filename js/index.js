@@ -1,22 +1,39 @@
-const $ = document
-const landingTitle = $.querySelector('.landing_title')
+const $ = document;
+const landingTitle = $.querySelector(".landing_title");
+const landingCoursesCount = $.querySelector("#courses-counter");
+const landingMinutesCount = $.querySelector("#minutes-counter");
+const landingUsersCount = $.querySelector("#users-counter");
 
-window.addEventListener('load', () => {
-    let landingText = 'ما به هر قیمتی دوره آموزشی تولید نمی کنیم !'
-    let typeIndex = 0
+window.addEventListener("load", () => {
+  let landingText = "ما به هر قیمتی دوره آموزشی تولید نمی کنیم !";
+  let typeIndex = 0;
 
-    typeWriter(landingText, typeIndex)
-})
+  typeWriter(landingText, typeIndex);
+  makeCounter(40, landingCoursesCount);
+  makeCounter(3_320, landingMinutesCount);
+  makeCounter(31_371, landingUsersCount);
+});
 
 function typeWriter(text, index) {
-    if(index < text.length){
-        landingTitle.innerHTML += text[index]
-        index++
-    }
+  if (index < text.length) {
+    landingTitle.innerHTML += text[index];
+    index++;
+  }
 
-    setTimeout(() => {
-        typeWriter(text, index);
-    },100);
+  setTimeout(() => {
+    typeWriter(text, index);
+  }, 100);
+}
+
+function makeCounter(max, elem) {
+    let counter = 0;
+    const interval = setInterval(() => {
+        if (counter === max) {
+            clearInterval(interval);
+        }
+        elem.innerHTML = counter;
+        counter++
+    }, 0.5);
 }
 
 console.log(landingTitle);
