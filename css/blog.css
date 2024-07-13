@@ -1,0 +1,84 @@
+@import './reset.css';
+@import './fonts.css';
+@import './variable.css';
+@import './helper.css';
+@import './top-bar.css';
+@import './navbar.css';
+@import './course-box.css';
+@import './default.css';
+@import './breadcrumb.css';
+@import './sidebarCoursesBox.css';
+@import './pagination.css';
+@import './footer.css';
+
+/* Start Blog sidebar Styles */
+
+.course-info {
+    overflow: hidden;
+}
+.course-info__courses-title{
+    position: relative;
+}
+.course-info__courses-title::before{
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 39px;
+    background-color: var(--primary-color);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 12px;
+    right: -27px;
+    transform: skew(-10deg);
+    -webkit-transform: skew(-10deg);
+    -moz-transform: skew(-10deg);
+    -ms-transform: skew(-10deg);
+    -o-transform: skew(-10deg);
+    top: -5px;
+}
+.sidebar-articles__list{
+    margin-top: 2rem;
+}
+.sidebar-articles__item{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eeeeee;
+    padding: 0.9rem 1.3rem 0.9rem 1rem;
+    transition: all 300ms ease-out;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+}
+.sidebar-articles__item:hover{
+    padding-right: 2rem;
+    background-color: #f8f9fa;
+}
+.sidebar-articles__icon{
+    margin-left: 0.5rem;
+    font-size: 1.4rem;
+    color: #909aa7;
+    transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+}
+.sidebar-articles__item:hover .sidebar-articles__icon{
+    color: var(--primary-color);
+}
+.sidebar-articles__link{
+    font-size: 1.3rem;
+}
+
+.last-articles__list{
+    margin-top: 2rem;
+}
+.last-articles__item{
+    border-bottom: 1px solid #eeeeee;
+    padding: 1rem 0;
+}
+.last-articles__link{
+    font-size: 1.5rem;
+}
+
+/* Finish Blog sidebar Styles */

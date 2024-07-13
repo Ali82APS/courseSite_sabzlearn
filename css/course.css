@@ -7,60 +7,10 @@
 @import './course-box.css';
 @import './default.css';
 @import './pagination.css';
+@import './sidebarCoursesBox.css';
 @import './footer.css';
 
 
-/* Start Breadcrumb Styles */
-.breadcrumb {
-    margin-bottom:  2rem;
-}
-.breadcrumb__content {
-    display: flex;
-    background-color: #f0f2f7;
-    padding: 1.5rem 2rem;
-    border-radius: 1rem;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    -ms-border-radius: 1rem;
-    -o-border-radius: 1rem;
-}
-.breadcrumb__home-content-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3.6rem;
-    height: 3.6rem;
-    background-color: var(--white-color);
-    border-radius: 1rem;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    -ms-border-radius: 1rem;
-    -o-border-radius: 1rem;
-}
-.breadcrumb__home-icon {
-    font-size: 1.8rem;
-    color: #909aa7;
-}
-.breadcrumb__list {
-    display: flex;
-    align-items: center;
-    margin-right: 1.5rem;
-}
-.breadcrumb__link {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    color: #7f8187;
-}
-.breadcrumb__link:hover {
-    color: #7f8187;
-}
-.breadcrumb__icon {
-    color: #7f8187;
-    font-size: 1.5rem;
-    margin: 0.7rem;
-}
-/* Finish Breadcrumb Styles */
 
 /* Start Course main info styles */
     .course-info__link{
@@ -360,21 +310,6 @@
 /* Finish Teacher Details styles */
 
 /* Start Sidebar styles */
-.courses-info{
-    position: sticky;
-    top: 2rem;
-}
-.course-info{
-    margin-top: 1rem;
-    padding: 2.2rem;
-    box-shadow: 0 0 13px 1px rgba(70, 72, 77, 0.08);
-    border: 1px solid #f2f2f2;
-    border-radius: 0.5rem;
-    -webkit-border-radius: 0.5rem;
-    -moz-border-radius: 0.5rem;
-    -ms-border-radius: 0.5rem;
-    -o-border-radius: 0.5rem;
-}
 
 .course-info__register{
     text-align: center;
@@ -480,41 +415,5 @@
     -ms-border-radius: 0.5rem;
     -o-border-radius: 0.5rem;
 }
-.course-info__topic-title{
-    display: block;
-    color: var(--dark-color);
-    font-size: 1.8rem;
-}
-.course-info__topic-text{
-    font-size: 1.5rem;
-    color: #7d7e7f;
-}
 
-.course-info__courses-title{
-    font-size: 1.8rem;
-    display: block;
-    color: var(--dark-color);
-    margin-bottom: 1.5rem;
-}
-.course-info__courses-item{
-    margin-bottom: 2rem;
-}
-.course-info__courses-link{
-    display: flex;
-    align-items: center;
-}
-.course-info__courses-img{
-    width: 70px;
-    border-radius: 0.5rem;
-    -webkit-border-radius: 0.5rem;
-    -moz-border-radius: 0.5rem;
-    -ms-border-radius: 0.5rem;
-    -o-border-radius: 0.5rem;
-}
-.course-info__courses-text{
-    font-size: 1.3rem;
-    margin-right: 0.5rem;
-    color: #8d8d8d;
-    font-weight: bold;
-}
 /* Finish Sidebar styles */
