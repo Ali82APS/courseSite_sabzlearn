@@ -1,0 +1,192 @@
+@import './reset.css';
+@import './fonts.css';
+@import './variable.css';
+@import './helper.css';
+@import './top-bar.css';
+@import './navbar.css';
+@import './course-box.css';
+@import './default.css';
+@import './breadcrumb.css';
+@import './sidebarCoursesBox.css';
+@import './pagination.css';
+@import './footer.css';
+
+
+.login-register{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.login{
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2.5rem 2rem 5rem 2rem;
+    margin: 4rem 0;
+    box-shadow: 0 6px 20px rgba(168, 172, 185, 0.3);
+    width: 50rem;
+    border-bottom: 5px solid #2bce56;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.login-title{
+    display: block;
+    color: #7b868a;
+    font-size: 2.2rem;
+}
+.login-subtitle{
+    font-size: 1.5rem;
+    color: #7b868a;
+    display: block;
+}
+.login__new-member{
+    background-color: #f0f2f7;
+    margin: 1.5rem 0;
+    padding: 1.5rem 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.login__new-member-text{
+    font-size: 1.4rem;
+    color: #7b868a;
+}
+.login__new-member-link{
+    margin-right: 0.7rem;
+    background-color: #a8aaaf;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.2rem;
+    color: var(--white-color);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.login-form{
+    width: 100%;
+}
+.login-form__username,
+.login-form__password{
+    position: relative;
+}
+.login-form__username-input,
+.login-form__password-input{
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    padding: 1rem 1.1rem;
+    margin: 0.8rem 0;
+    font-size: 1.4rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.login-form__username-icon,
+.login-form__password-icon{
+    position: absolute;
+    top: 2rem;
+    left: 1.5rem;
+    font-size: 2.2rem;
+    color: #ccc;
+}
+
+.login-form__btn{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 1.2rem 0;
+    margin-top: 0.8rem;
+    border: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    background-color: #2bce56;
+}
+.login-form__btn-icon{
+    color: var(--white-color);
+    font-size: 1.8rem;
+    position: absolute;
+    right: 1rem;
+}
+.login-form__btn-text{
+    color: var(--white-color);
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+.login-form__password-setting {
+    display: flex;
+    gap: 12rem;
+    margin: 1rem 0;
+}
+.login-form__password-remember{
+    display: flex;
+    align-items: center;
+}
+.login-form__password-checkbox{
+    margin-left: 1rem;
+}
+.login-form__password-forget-link,
+.login-form__password-text{
+    font-size: 1.4rem;
+    color: #6c757d;
+}
+
+.login-des{
+    margin-top: 3rem;
+    color: #7b868a;
+    font-size: 1.2rem;
+    width: 100%;
+}
+.login-des-list{
+    list-style-type: disc;
+    margin-right: 2rem;
+    margin-top: 1rem;
+}
+
+.login-register::before{
+    content: "";
+    top: -5rem;
+    position: absolute;
+    width: 150%;
+    height: 380px;
+    background-color: #2bce56;
+    z-index: -99;
+    transform: rotate(-4deg);
+    -webkit-transform: rotate(-4deg);
+    -moz-transform: rotate(-4deg);
+    -ms-transform: rotate(-4deg);
+    -o-transform: rotate(-4deg);
+}
+.login-register::after{
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 380px;
+    background-color: rgba(43, 206, 86,0.6);
+    z-index: -1;
+    transform: rotate(-4deg);
+    -webkit-transform: rotate(-4deg);
+    -moz-transform: rotate(-4deg);
+    -ms-transform: rotate(-4deg);
+    -o-transform: rotate(-4deg);
+}
