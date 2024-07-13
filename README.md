@@ -1,2 +1,1 @@
-next push: 
->>> complete `html & css` parts
+js  begins ...
