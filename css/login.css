@@ -190,3 +190,11 @@
     -ms-transform: rotate(-4deg);
     -o-transform: rotate(-4deg);
 }
+
+
+/* Library Custom Styles */
+.swal-button-container {
+    display: flex;
+    justify-content: center;
+}
+/* Library Custom Styles */
