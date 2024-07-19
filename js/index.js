@@ -1,4 +1,4 @@
-import { getAndShowAllCourses } from "./funcs/shared.js";
+import { getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles } from "./funcs/shared.js";
 
 const $ = document;
 const landingTitle = $.querySelector(".landing_title");
@@ -15,7 +15,10 @@ window.addEventListener("load", () => {
   makeCounter(3_320, landingMinutesCount);
   makeCounter(3_371, landingUsersCount);
 
-  getAndShowAllCourses().then(data => {
+  getAndShowAllCourses()
+  getAndShowPopularCourses()
+  getAndShowPresellCourses()
+  getAndShowArticles().then(data => {
     console.log(data);
   })
 });
@@ -32,14 +35,14 @@ function typeWriter(text, index) {
 }
 
 function makeCounter(max, elem) {
-    let counter = 0;
-    const interval = setInterval(() => {
-        if (counter === max) {
-            clearInterval(interval);
-        }
-        elem.innerHTML = counter;
-        counter++
-    }, 0.5);
+  let counter = 0;
+  const interval = setInterval(() => {
+    if (counter === max) {
+      clearInterval(interval);
+    }
+    elem.innerHTML = counter;
+    counter++;
+  }, 0.5);
 }
 
 console.log(landingTitle);
