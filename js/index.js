@@ -1,4 +1,4 @@
-import { getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles } from "./funcs/shared.js";
+import { getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowNavbarMenus } from "./funcs/shared.js";
 
 const $ = document;
 const landingTitle = $.querySelector(".landing_title");
@@ -18,9 +18,9 @@ window.addEventListener("load", () => {
   getAndShowAllCourses()
   getAndShowPopularCourses()
   getAndShowPresellCourses()
-  getAndShowArticles().then(data => {
-    console.log(data);
-  })
+  getAndShowArticles() 
+  getAndShowNavbarMenus()
+  
 });
 
 function typeWriter(text, index) {

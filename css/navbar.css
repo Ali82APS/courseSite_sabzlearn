@@ -21,6 +21,7 @@
 .main-header__menu {
   display: flex;
   align-items: center;
+  
 }
 
 .main-header__item {
@@ -51,7 +52,7 @@
 
 .main-header__dropdown {
   position: absolute;
-  top: 5rem;
+  top: 5.5rem;
   left: 0;
   right: 0;
   background-color: var(--white-color);
@@ -69,12 +70,12 @@
 .main-header_item:hover .main-header__dropdown {
   opacity: 1;
   visibility: visible;
-  top: 15rem;
+  top: 6.5rem;
 }
 
 .main-header__dropdown-link {
   display: block;
-  padding: 0.5rem 2rem;
+  padding: 0.6rem 2rem;
   font-size: 1.4rem;
   color: var(--dark-color);
   transition: all 400ms ease;
