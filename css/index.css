@@ -1,11 +1,14 @@
 @import './reset.css';
-@import './helper.css';
+@import './fonts.css';
 @import './variable.css';
+@import './helper.css';
 @import './top-bar.css';
 @import './navbar.css';
-@import './fonts.css';
-@import './default.css';
 @import './course-box.css';
+@import './default.css';
+@import './breadcrumb.css';
+@import './sidebarCoursesBox.css';
+@import './pagination.css';
 @import './footer.css';
 
 /* 808088088080800808808008080808080088080080808080808088 */

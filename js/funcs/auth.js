@@ -24,7 +24,6 @@ const register = () => {
     body: JSON.stringify(newUserInfos),
   })
     .then((res) => {
-      console.log(res);
       if (res.status === 201) {
         showSwal(
           "ثبت نام با موفقیت انجام شد",
@@ -45,6 +44,7 @@ const register = () => {
       return res.json();
     })
     .then((result) => {
+      console.log(result);
       saveIntoLocalStorage("user", { token: result.accessToken });
     });
 };
@@ -68,13 +68,13 @@ const login = () => {
     .then((res) => {
       if (res.status === 401) {
         showSwal(
-          "کاربری با این اطلاعات یافت نشد!",
+          "کاربری با این اطلاعات یافت نشد",
           "error",
           "تصحیح اطلاعات",
           () => {}
         );
       } else if (res.status === 200) {
-        showSwal("با موفقیت وارد شدی :)", "success", "ورود به پنل", () => {
+        showSwal("با موفقیت وارد شدید", "success", "ورود به پنل", () => {
           location.href = "index.html";
         });
       }

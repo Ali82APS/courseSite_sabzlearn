@@ -68,130 +68,11 @@
                 class="main-header__logo"
                 alt="لوگوی سبزلرن"
               />
-              <ul class="main-header__menu">
+              <ul class="main-header__menu" id="menus-wrapper">
                 <li class="main-header_item">
                   <a href="#" class="main-header__link">صفحه اصلی</a>
                 </li>
-                <li class="main-header_item">
-                  <a href="#" class="main-header__link"
-                    >فرانت اند
-                    <i class="fas fa-angle-down main-header__link-icon"></i>
-                    <ul class="main-header__dropdown">
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >آموزش Html</a
-                        >
-                      </li>
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >آموزش Css</a
-                        >
-                      </li>
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >آموزش جاوااسکریپت</a
-                        >
-                      </li>
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >آموزش FlexBox</a
-                        >
-                      </li>
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >آموزش Grid</a
-                        >
-                      </li>
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >آموزش پروژه خلاقانه</a
-                        >
-                      </li>
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >آموزش ری اکت</a
-                        >
-                      </li>
-                    </ul>
-                  </a>
-                </li>
-                <li class="main-header_item">
-                  <a href="#" class="main-header__link"
-                    >امنیت
-                    <i class="fas fa-angle-down main-header__link-icon"></i>
-                    <ul class="main-header__dropdown">
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >آموزش کالی لینوکس</a
-                        >
-                      </li>
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >آموزش پایتون سیاه</a
-                        >
-                      </li>
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >آموزش جاوااسکریپت سیاه</a
-                        >
-                      </li>
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >آموزش شبکه</a
-                        >
-                      </li>
-                    </ul>
-                  </a>
-                </li>
-                <li class="main-header_item">
-                  <a href="#" class="main-header__link"
-                    >مقالات
-                    <i class="fas fa-angle-down main-header__link-icon"></i>
-                    <ul class="main-header__dropdown">
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >توسعه وب</a
-                        >
-                      </li>
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >هوش مصنوعی</a
-                        >
-                      </li>
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link">
-                          جاوااسکریپت
-                        </a>
-                      </li>
-                    </ul>
-                  </a>
-                </li>
-                <li class="main-header_item">
-                  <a href="#" class="main-header__link"
-                    >پایتون
-                    <i class="fas fa-angle-down main-header__link-icon"></i>
-                    <ul class="main-header__dropdown">
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >دوره متخصص پایتون</a
-                        >
-                      </li>
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >دوره هوش مصنوعی با پایتون</a
-                        >
-                      </li>
-                      <li class="main-header__dropdown-item">
-                        <a href="#" class="main-header__dropdown-link"
-                          >دوره متخصص جنگو</a
-                        >
-                      </li>
-                    </ul>
-                  </a>
-                </li>
-                <li class="main-header_item">
-                  <a href="#" class="main-header__link">مهارت های نرم</a>
-                </li>
+                <!-- Data loaded from js -->
               </ul>
             </div>
             <div class="main-header__left">
@@ -202,7 +83,7 @@
                 <i class="fas fa-shopping-cart main-header__cart--icon"></i>
               </a>
               <a href="#" class="main-header__profile">
-                <span class="main-header__profile--text">علی امیرپورسعید</span>
+                <!-- <span class="main-header__profile--text">علی امیرپورسعید</span> -->
               </a>
             </div>
           </div>
@@ -216,28 +97,47 @@
       <div class="container">
         <div class="courses-top-bar">
           <div class="courses-top-bar__right">
-            <div class="courses-top-bar__row-btn courses-top-bar__icon--active">
+            <div
+              class="courses-top-bar__row-btn courses-top-bar__icon-parent courses-top-bar__icon--active"
+            >
               <i class="fas fa-border-all courses-top-bar__icon"></i>
             </div>
-            <div class="courses-top-bar__column-btn">
+            <div
+              class="courses-top-bar__column-btn courses-top-bar__icon-parent"
+            >
               <i class="fas fa-align-left courses-top-bar__icon"></i>
             </div>
             <div class="courses-top-bar__selection">
-                <span class="courses-top-bar__selection-title">
-                    مرتب سازی پیش فرض
-                    <i class="fas fa-angle-down courses-top-bar__selection-icon"></i>
-                </span>
-                <ul class="courses-top-bar__selection-list">
-                    <li class="courses-top-bar__selection-item courses-top-bar__selection-item--active">مرتب ساز پیش فرض</li>
-                    <li class="courses-top-bar__selection-item">مرتب سازی براساس محبوبیت</li>
-                    <li class="courses-top-bar__selection-item">مرتب سازی براساس امتیاز</li>
-                    <li class="courses-top-bar__selection-item">مرتب سازی براساس آخرین</li>
-                    <li class="courses-top-bar__selection-item">مرتب سازی براساس ارزانترین</li>
-                    <li class="courses-top-bar__selection-item">مرتب سازی براساس گرانترین</li>
-                </ul>
-              </div>
+              <span class="courses-top-bar__selection-title">
+                مرتب سازی پیش فرض
+                <i
+                  class="fas fa-angle-down courses-top-bar__selection-icon"
+                ></i>
+              </span>
+              <ul class="courses-top-bar__selection-list">
+                <li
+                  class="courses-top-bar__selection-item courses-top-bar__selection-item--active"
+                >
+                  مرتب ساز پیش فرض
+                </li>
+                <li class="courses-top-bar__selection-item">
+                  مرتب سازی براساس محبوبیت
+                </li>
+                <li class="courses-top-bar__selection-item">
+                  مرتب سازی براساس امتیاز
+                </li>
+                <li class="courses-top-bar__selection-item">
+                  مرتب سازی براساس آخرین
+                </li>
+                <li class="courses-top-bar__selection-item">
+                  مرتب سازی براساس ارزانترین
+                </li>
+                <li class="courses-top-bar__selection-item">
+                  مرتب سازی براساس گرانترین
+                </li>
+              </ul>
+            </div>
           </div>
-          
 
           <div class="courses-top-bar__left">
             <form action="#" class="courses-top-bar__form">
@@ -251,153 +151,43 @@
           </div>
         </div>
         <div class="courses-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-4">
-                        <div class="course-box">
-                            <a href="#">
-                                <img src="images/courses/fareelancer.png" alt="course img" class="course-box__img">
-                            </a>
-                            <div class="course-box__main">
-                              <a href="#" class="course-box__title">دوره پروژه محور متخصص جنگو</a>
-                              <div class="course-box__rating-teacher">
-                                <div class="course-box__teacher">
-                                    <i class="fas fa-chalkboard-teacher eacher course-box__teacher-icon"></i>
-                                    <a href="#" class="course-box__teacher-link">رضا دولتی</a>
-                                </div>
-                                <div class="course-box__rating">
-                                    <img src="images/svgs/star.svg" alt="rating" class="course-box__stars">
-                                    <img src="images/svgs/star_fill.svg" alt="rating" class="course-box__stars">
-                                    <img src="images/svgs/star_fill.svg" alt="rating" class="course-box__stars">
-                                    <img src="images/svgs/star_fill.svg" alt="rating" class="course-box__stars">
-                                    <img src="images/svgs/star_fill.svg" alt="rating" class="course-box__stars">
-                                </div>
-                              </div>
-                              <div class="course-box__status">
-                                <div class="course-box__users">
-                                    <i class="fas fa-users course-box__users-icon"></i>
-                                    <span class="course-box__users-text">500</span>
-                                </div>
-                                <span class="course-box__price">1,000,000</span>
-                              </div>
-                            </div>
-
-                            <div class="course-box__footer">
-                                <a href="#" class="course-box__footer-link">
-                                    مشاهده اطلاعات
-                                    <i class="fas fa-arrow-left course-box__footer-icon"></i>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="course-box">
-                            <a href="#">
-                                <img src="images/courses/jango.png" alt="course img" class="course-box__img">
-                            </a>
-                            <div class="course-box__main">
-                              <a href="#" class="course-box__title">دوره پروژه محور متخصص جنگو</a>
-                              <div class="course-box__rating-teacher">
-                                <div class="course-box__teacher">
-                                    <i class="fas fa-chalkboard-teacher course-box__teacher-icon"></i>
-                                    <a href="#" class="course-box__teacher-link">رضا دولتی</a>
-                                </div>
-                                <div class="course-box__rating">
-                                    <img src="images/svgs/star.svg" alt="rating" class="course-box__stars">
-                                    <img src="images/svgs/star_fill.svg" alt="rating" class="course-box__stars">
-                                    <img src="images/svgs/star_fill.svg" alt="rating" class="course-box__stars">
-                                    <img src="images/svgs/star_fill.svg" alt="rating" class="course-box__stars">
-                                    <img src="images/svgs/star_fill.svg" alt="rating" class="course-box__stars">
-                                </div>
-                              </div>
-                              <div class="course-box__status">
-                                <div class="course-box__users">
-                                    <i class="fas fa-users course-box__users-icon"></i>
-                                    <span class="course-box__users-text">500</span>
-                                </div>
-                                <span class="course-box__price">1,000,000</span>
-                              </div>
-                            </div>
-
-                            <div class="course-box__footer">
-                                <a href="#" class="course-box__footer-link">
-                                    مشاهده اطلاعات
-                                    <i class="fas fa-arrow-left course-box__footer-icon"></i>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="course-box">
-                            <a href="#">
-                                <img src="images/courses/js_project.png" alt="course img" class="course-box__img">
-                            </a>
-                            <div class="course-box__main">
-                              <a href="#" class="course-box__title">دوره پروژه محور متخصص جنگو</a>
-                              <div class="course-box__rating-teacher">
-                                <div class="course-box__teacher">
-                                    <i class="fas fa-chalkboard-teacher course-box__teacher-icon"></i>
-                                    <a href="#" class="course-box__teacher-link">رضا دولتی</a>
-                                </div>
-                                <div class="course-box__rating">
-                                    <img src="images/svgs/star.svg" alt="rating" class="course-box__stars">
-                                    <img src="images/svgs/star_fill.svg" alt="rating" class="course-box__stars">
-                                    <img src="images/svgs/star_fill.svg" alt="rating" class="course-box__stars">
-                                    <img src="images/svgs/star_fill.svg" alt="rating" class="course-box__stars">
-                                    <img src="images/svgs/star_fill.svg" alt="rating" class="course-box__stars">
-                                </div>
-                              </div>
-                              <div class="course-box__status">
-                                <div class="course-box__users">
-                                    <i class="fas fa-users course-box__users-icon"></i>
-                                    <span class="course-box__users-text">500</span>
-                                </div>
-                                <span class="course-box__price">1,000,000</span>
-                              </div>
-                            </div>
-
-                            <div class="course-box__footer">
-                                <a href="#" class="course-box__footer-link">
-                                    مشاهده اطلاعات
-                                    <i class="fas fa-arrow-left course-box__footer-icon"></i>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+          <div class="container">
+            <div class="row" id="category-courses-wrapper">
+              <!-- Loaded data from Js -->
             </div>
+          </div>
         </div>
         <div class="courses-pagination">
-            <ul class="courses__pagination-list">
-                <li class="courses__pagination-item">
-                    <a href="#" class="courses__pagination-link">
-                        <i class="fas fa-long-arrow-alt-right courses__pagination-icon"></i>
-                    </a>
-                </li>
-                <li class="courses__pagination-item">
-                    <a href="#" class="courses__pagination-link">
-                        1
-                    </a>
-                </li>
-                <li class="courses__pagination-item">
-                    <a href="#" class="courses__pagination-link">
-                        2
-                    </a>
-                </li>
-                <li class="courses__pagination-item">
-                    <a href="#" class="courses__pagination-link courses__pagination-link--active">
-                        3
-                    </a>
-                </li>
-                <li class="courses__pagination-item">
-                    <a href="#" class="courses__pagination-link">
-                        <i class="fas fa-long-arrow-alt-left courses__pagination-icon"></i>
-                    </a>
-                </li>
-            </ul>
+          <ul class="courses__pagination-list">
+            <li class="courses__pagination-item">
+              <a href="#" class="courses__pagination-link">
+                <i
+                  class="fas fa-long-arrow-alt-right courses__pagination-icon"
+                ></i>
+              </a>
+            </li>
+            <li class="courses__pagination-item">
+              <a href="#" class="courses__pagination-link"> 1 </a>
+            </li>
+            <li class="courses__pagination-item">
+              <a href="#" class="courses__pagination-link"> 2 </a>
+            </li>
+            <li class="courses__pagination-item">
+              <a
+                href="#"
+                class="courses__pagination-link courses__pagination-link--active"
+              >
+                3
+              </a>
+            </li>
+            <li class="courses__pagination-item">
+              <a href="#" class="courses__pagination-link">
+                <i
+                  class="fas fa-long-arrow-alt-left courses__pagination-icon"
+                ></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -497,6 +287,15 @@
     </footer>
     <!-- Finish Footer -->
 
+    <script src="vendor/SwiperSlider/swiper.js"></script>
     <script src="vendor/FontAwesome5/all.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/slider.js"></script>
+    <script type="module" src="js/category.js"></script>
+    <script type="module" src="js/shared.js"></script>
   </body>
 </html>
