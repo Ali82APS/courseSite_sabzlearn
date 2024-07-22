@@ -41,12 +41,13 @@ const getAndShowAllCourses = async () => {
   const courses = await res.json();
 
   courses.slice(0, 6).map((course) => {
+    console.log(course);
     coursesContainer.insertAdjacentHTML(
       "beforeend",
       `
     <div class="col-4">
                 <div class="course-box">
-                  <a href="#">
+                  <a href="course.html?name=${course.shortName}">
                     <img src=http://localhost:4000/courses/covers/${
                       course.cover
                     } alt="Course img" class="course-box__img" />
@@ -480,36 +481,58 @@ const insertCourseBoxHtmlTemplate = (courses, showType, parentElement) => {
 };
 
 const coursesSorting = (array, filterMethod) => {
-  let outputArray = []
-  
-  switch(filterMethod) {
-    case 'free': {
-      outputArray = array.filter(course => course.price === 0)
-      break
+  let outputArray = [];
+
+  switch (filterMethod) {
+    case "free": {
+      outputArray = array.filter((course) => course.price === 0);
+      break;
     }
-    case 'money': {
-      outputArray = array.filter(course => course.price !== 0)
-      break
+    case "money": {
+      outputArray = array.filter((course) => course.price !== 0);
+      break;
     }
-    case 'first': {
-      outputArray = [...array].reverse()
-      break
+    case "first": {
+      outputArray = [...array].reverse();
+      break;
     }
-    case 'last': {
-      outputArray = array
-      break
+    case "last": {
+      outputArray = array;
+      break;
     }
-    case 'default': {
-      outputArray = array
-      break
+    case "default": {
+      outputArray = array;
+      break;
     }
     default: {
-      outputArray = array
+      outputArray = array;
     }
   }
 
-  return outputArray
-}
+  return outputArray;
+};
+
+const getCourseDetails = () => {
+  const courseShortName = getUrlParam("name");
+
+  // Select Elems From DOM
+  const $ = document
+  const courseTitleElem = $.querySelector('.course-info__title')
+  const courseDescElem = $.querySelector('.course-info__text')
+
+  fetch(`http://localhost:4000/v1/courses/${courseShortName}`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${getToken()}`
+    }
+  })
+    .then((res) => res.json())
+    .then((course) => {
+      console.log(course);
+      courseTitleElem.innerHTML = course.name
+      courseDescElem.innerHTML = course.description
+    });
+};
 
 export {
   showUserNameInNavbar,
@@ -521,5 +544,6 @@ export {
   getAndShowNavbarMenus,
   getAndShowCategoryCourses,
   insertCourseBoxHtmlTemplate,
-  coursesSorting
+  coursesSorting,
+  getCourseDetails,
 };

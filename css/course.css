@@ -377,6 +377,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
 .course-info__total-comment::before{
     content: "";
@@ -393,7 +394,7 @@
 .course-info__total-comment-text,
 .course-info__total-view-text{
     font-size: 1.4rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .course-info__header-short-url{

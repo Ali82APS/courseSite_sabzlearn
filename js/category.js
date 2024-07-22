@@ -9,6 +9,8 @@ import { searchInArray } from "./funcs/utils.js";
 window.addEventListener("load", () => {
   getAndShowCategoryCourses().then((responseCourses) => {
     let courses = [...responseCourses];
+    console.log(responseCourses);
+    console.log(courses);
     let coursesShowType = "row";
     const coursesShowTypeIcons = document.querySelectorAll(
       ".courses-top-bar__icon-parent"
