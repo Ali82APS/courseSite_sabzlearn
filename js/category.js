@@ -9,8 +9,8 @@ import { searchInArray } from "./funcs/utils.js";
 window.addEventListener("load", () => {
   getAndShowCategoryCourses().then((responseCourses) => {
     let courses = [...responseCourses];
-    console.log(responseCourses);
     console.log(courses);
+    console.log(getAndShowCategoryCourses);
     let coursesShowType = "row";
     const coursesShowTypeIcons = document.querySelectorAll(
       ".courses-top-bar__icon-parent"
@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
       insertCourseBoxHtmlTemplate(
         courses,
         coursesShowType,
-        categoryCoursesWrapper
+        categoryCoursesWrapper()
       );
     } else {
       categoryCoursesWrapper.insertAdjacentHTML(
@@ -109,20 +109,23 @@ window.addEventListener("load", () => {
         event.target.value
       );
 
+      console.log(Boolean(shownCourses.length));
+
       if (shownCourses.length) {
         insertCourseBoxHtmlTemplate(
           shownCourses,
           coursesShowType,
           categoryCoursesWrapper
-        )
+        );
       } else {
-        categoryCoursesWrapper.innerHTML = ''
+        categoryCoursesWrapper.innerHTML = "";
         categoryCoursesWrapper.insertAdjacentHTML(
-          "beforeend",`
-                        <div class="alert alert-danger">هیچ دوره‌ای برای جستجوی شما وجود ندارد :/</div>`
-        )
+          "beforeend",
+          `
+              <div class="alert alert-danger">هیچ دوره‌ای برای جستجوی شما وجود ندارد :/</div>
+            `
+        );
       }
-
     });
   });
 });
