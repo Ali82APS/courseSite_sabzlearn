@@ -293,7 +293,7 @@ const getAndShowNavbarMenus = async () => {
       "beforeend",
       `
     <li class="main-header__item">
-    <a href=category.html?cat=${menu.href} class="main-header__link">${
+    <a href=category.html?cat=${menu.href}&page=1 class="main-header__link">${
         menu.title
       }
       ${
@@ -333,7 +333,7 @@ const getAndShowCategoryCourses = async () => {
   return courses;
 };
 
-const insertCourseBoxHtmlTemplate = (courses, showType, parentElement) => {
+const insertCourseBoxHtmlTemplate = (courses, showType = 'row', parentElement) => {
   parentElement.innerHTML = "";
 
   if (showType === "row") {
@@ -536,9 +536,7 @@ const getCourseDetails = () => {
   const courseStudentsCountElem = $.querySelector(
     ".course-info__total-sale-number"
   );
-  const commentsContentWrapper = $.querySelector(
-    ".comments__content"
-  );
+  const commentsContentWrapper = $.querySelector(".comments__content");
 
   fetch(`http://localhost:4000/v1/courses/${courseShortName}`, {
     method: "POST",
@@ -634,19 +632,30 @@ const getCourseDetails = () => {
         );
       }
 
-       // Show Course Comments
-       if(course.comments.length) {
-        course.comments.forEach(comment => {
-          commentsContentWrapper.insertAdjacentHTML('beforeend', `
+      // Show Course Comments
+      if (course.comments.length) {
+        course.comments.forEach((comment) => {
+          commentsContentWrapper.insertAdjacentHTML(
+            "beforeend",
+            `
               <div class="comments__item">
                 <div class="comments__question">
                     <div class="comments__question-header">
                         <div class="comments__question-header-right">
-                            <span class="comments__question-name comment-name">${comment.creator.name}</span>
+                            <span class="comments__question-name comment-name">${
+                              comment.creator.name
+                            }</span>
                             <span class="comments__question-status comment-status">
-                            (${comment.creator.role === 'USER' ? "دانشجو" : "مدرس"})
+                            (${
+                              comment.creator.role === "USER"
+                                ? "دانشجو"
+                                : "مدرس"
+                            })
                                 </span>
-                            <span class="comments__question-date comment-date">${comment.createdAt.slice(0, 10)}</span>
+                            <span class="comments__question-date comment-date">${comment.createdAt.slice(
+                              0,
+                              10
+                            )}</span>
                         </div>
                         <div class="comments__question-header-left">
                             <a class="comments__question-header-link comment-link" href="#">پاسخ</a>
@@ -659,8 +668,9 @@ const getCourseDetails = () => {
                         </p>
                     </div>
                 </div>
-                ${comment.answerContent ? 
-                    `
+                ${
+                  comment.answerContent
+                    ? `
                       <div class="comments__ansewr">
                           <div class="comments__ansewr-header">
                               <div class="comments__ansewr-header-right">
@@ -668,7 +678,11 @@ const getCourseDetails = () => {
                                  ${comment.answerContent.creator.name}
                                       </span>
                                   <span class="comments__ansewr-staus comment-status">
-                                    (${comment.creator.role === 'USER' ? "دانشجو" : "مدرس"})
+                                    (${
+                                      comment.creator.role === "USER"
+                                        ? "دانشجو"
+                                        : "مدرس"
+                                    })
                                   </span>
                                   <span class="comments__ansewr-date comment-date">1401/04/21</span>
                               </div>
@@ -683,16 +697,20 @@ const getCourseDetails = () => {
                           </div>
                       </div>
                     `
-                  : ''}
+                    : ""
+                }
               </div>
-          `)
-         })
-       } else {
-        commentsContentWrapper.insertAdjacentHTML('beforeend', `
+          `
+          );
+        });
+      } else {
+        commentsContentWrapper.insertAdjacentHTML(
+          "beforeend",
+          `
           <div class="alert alert-danger">هنوز هیچ کامنتی برای این دوره ثبت نشده</div>
-        `)
-       }
-       
+        `
+        );
+      }
     });
 };
 
@@ -822,20 +840,20 @@ const submitContactUsMsg = async () => {
 };
 
 const createNewNewsLetter = async () => {
-  const newsLetterInput = document.querySelector('#news-letter-input')
+  const newsLetterInput = document.querySelector("#news-letter-input");
 
   console.log(newsLetterInput);
   const newNewsLetterEmailObj = {
-    email: newsLetterInput.value.trim()
-  }
+    email: newsLetterInput.value.trim(),
+  };
 
   const res = await fetch(`http://localhost:4000/v1/newsletters`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(newNewsLetterEmailObj)
-  })
+    body: JSON.stringify(newNewsLetterEmailObj),
+  });
 
   console.log(res);
 
@@ -847,19 +865,23 @@ const createNewNewsLetter = async () => {
       () => {}
     );
   }
-}
+};
 
 const globalSearch = async () => {
-  const searchValue = getUrlParam('value')
-  const coursesSearchResultWrapper = document.querySelector('#courses-container')
-  const articlesSearchResultWrapper = document.querySelector('#articles-wrapper')
+  const searchValue = getUrlParam("value");
+  const coursesSearchResultWrapper =
+    document.querySelector("#courses-container");
+  const articlesSearchResultWrapper =
+    document.querySelector("#articles-wrapper");
 
-  const res = await fetch(`http://localhost:4000/v1/search/${searchValue}`)
-  const data = await res.json()
+  const res = await fetch(`http://localhost:4000/v1/search/${searchValue}`);
+  const data = await res.json();
 
-  if(data.allResultCourses.length) {
-    data.allResultCourses.forEach(course => {
-    coursesSearchResultWrapper.insertAdjacentHTML('beforeend', `
+  if (data.allResultCourses.length) {
+    data.allResultCourses.forEach((course) => {
+      coursesSearchResultWrapper.insertAdjacentHTML(
+        "beforeend",
+        `
       <div class="col-4">
         <div class="course-box">
           <a href="course.html?name=${course.shortName}">
@@ -889,14 +911,10 @@ const globalSearch = async () => {
             <div class="course-box__status">
               <div class="course-box__users">
                 <i class="fas fa-users course-box__users-icon"></i>
-                <span class="course-box__users-text">${
-                  course.registers
-                }</span>
+                <span class="course-box__users-text">${course.registers}</span>
               </div>
               <span class="course-box__price">${
-                course.price === 0
-                  ? "رایگان"
-                  : course.price.toLocaleString()
+                course.price === 0 ? "رایگان" : course.price.toLocaleString()
               }</span>
             </div>
           </div>
@@ -910,17 +928,23 @@ const globalSearch = async () => {
 
         </div>
       </div>
-    `)
-  })
+    `
+      );
+    });
   } else {
-    coursesSearchResultWrapper.insertAdjacentHTML('beforeend', `
+    coursesSearchResultWrapper.insertAdjacentHTML(
+      "beforeend",
+      `
       <div class="alert alert-danger">هیچ دوره‌ای برای جستجوی شما وجود ندارد</div>
-    `)
+    `
+    );
   }
 
-  if(data.allResultArticles.length) {
-      data.allResultArticles.forEach(article => {
-      articlesSearchResultWrapper.insertAdjacentHTML('beforeend', `
+  if (data.allResultArticles.length) {
+    data.allResultArticles.forEach((article) => {
+      articlesSearchResultWrapper.insertAdjacentHTML(
+        "beforeend",
+        `
             <div class="col-4">
               <div class="article-card">
                 <div class="article-card__header">
@@ -939,19 +963,69 @@ const globalSearch = async () => {
                 </div>
               </div>
             </div>
-      `)
-    })
+      `
+      );
+    });
   } else {
-    articlesSearchResultWrapper.insertAdjacentHTML('beforeend', `
+    articlesSearchResultWrapper.insertAdjacentHTML(
+      "beforeend",
+      `
       <div class="alert alert-danger">هیچ مقاله‌ای برای جستجوی شما وجود ندارد</div>
-    `)
+    `
+    );
   }
-  
 
-  
+  return data;
+};
 
-  return data
-}
+const submitComment = async () => {
+  const commentTextareaElem = document.querySelector(
+    ".comments__score-input-respond"
+  );
+  const commentScoreElem = document.querySelector("#comment-score");
+  let score = 5;
+  let courseShortName = getUrlParam("name");
+
+  commentScoreElem.addEventListener(
+    "change",
+    (event) => (score = event.target.value)
+  );
+
+  const newCommentInfos = {
+    body: commentTextareaElem.value.trim(),
+    courseShortName,
+    score,
+  };
+
+  const res = await fetch(`http://localhost:4000/v1/comments`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newCommentInfos),
+  });
+
+  console.log(res);
+
+  if (res.ok) {
+    showSwal(
+      "کامنت مورد نظر شما با موفقیت ثبت شد",
+      "success",
+      "خیلی هم عالی",
+      () => {}
+    );
+  }
+};
+
+const getAllCourses = async () => {
+  const coursesWrapperElem = document.querySelector("#courses-wrapper");
+
+  const res = await fetch(`http://localhost:4000/v1/courses`);
+  const courses = await res.json();
+
+  return courses;
+};
 
 export {
   showUserNameInNavbar,
@@ -969,5 +1043,7 @@ export {
   getSessionDetails,
   submitContactUsMsg,
   createNewNewsLetter,
-  globalSearch
+  globalSearch,
+  submitComment,
+  getAllCourses,
 };

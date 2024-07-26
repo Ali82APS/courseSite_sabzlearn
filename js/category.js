@@ -4,13 +4,13 @@ import {
   coursesSorting,
 } from "./funcs/shared.js";
 
-import { searchInArray } from "./funcs/utils.js";
+import { searchInArray, paginateItems, getUrlParam, addParamToUrl } from "./funcs/utils.js";
+
+window.addParamToUrl = addParamToUrl
 
 window.addEventListener("load", () => {
   getAndShowCategoryCourses().then((responseCourses) => {
     let courses = [...responseCourses];
-    console.log(courses);
-    console.log(getAndShowCategoryCourses);
     let coursesShowType = "row";
     const coursesShowTypeIcons = document.querySelectorAll(
       ".courses-top-bar__icon-parent"
@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
       insertCourseBoxHtmlTemplate(
         courses,
         coursesShowType,
-        categoryCoursesWrapper()
+        categoryCoursesWrapper
       );
     } else {
       categoryCoursesWrapper.insertAdjacentHTML(
@@ -127,5 +127,24 @@ window.addEventListener("load", () => {
         );
       }
     });
+
+    // Handle Pagination
+    const coursesPaginationWrapper = document.querySelector(
+      ".courses__pagination-list"
+    );
+    const currentPage = getUrlParam("page");
+    
+    const shownCourses = paginateItems(
+      [...responseCourses],
+      3,
+      coursesPaginationWrapper,
+      currentPage
+    );
+
+    insertCourseBoxHtmlTemplate(
+      [...shownCourses],
+      coursesShowType,
+      categoryCoursesWrapper
+    );
   });
 });
