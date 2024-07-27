@@ -326,14 +326,30 @@ const getAndShowCategoryCourses = async () => {
   const categoryName = getUrlParam("cat");
 
   const res = await fetch(
-    `http://localhost:4000/v1/courses/category/${categoryName}`
+    `http://localhost:4000/v1/courses/category:${categoryName}`
   );
+
+  console.log(res);
+
+  const partToRemove = "/category-info";
+  const startIndex = categoryName.indexOf(partToRemove);
+  const endIndex = startIndex + partToRemove.length;
+  const updatedCategoryName = categoryName.slice(0, startIndex) + categoryName.slice(endIndex);
+  const updatedUrl = `http://localhost:4000/v1/courses/category${updatedCategoryName}`;
+
+  console.log(updatedUrl);
+
   const courses = await res.json();
+  console.log(courses);
 
   return courses;
 };
 
-const insertCourseBoxHtmlTemplate = (courses, showType = 'row', parentElement) => {
+const insertCourseBoxHtmlTemplate = (
+  courses,
+  showType = "row",
+  parentElement
+) => {
   parentElement.innerHTML = "";
 
   if (showType === "row") {
