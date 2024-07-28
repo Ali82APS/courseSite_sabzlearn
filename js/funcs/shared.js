@@ -48,7 +48,7 @@ const getAndShowAllCourses = async () => {
     <div class="col-4">
                 <div class="course-box">
                   <a href="course.html?name=${course.shortName}">
-                    <img src=http://localhost:4000/courses/covers/${
+                    <img src=http://localhost:4000/courses/covers${
                       course.cover
                     } alt="Course img" class="course-box__img" />
                   </a>
@@ -261,7 +261,7 @@ const getAndShowArticles = async () => {
     <div class="article-card">
       <div class="article-card__header">
         <a href="#" class="article-card__link-img">
-          <img src=http://localhost:4000/courses/covers/${article.cover} class="article-card__img" alt="Article Cover" />
+          <img src=http://localhost:4000/courses/covers${article.cover} class="article-card__img" alt="Article Cover" />
         </a>
       </div>
       <div class="article-card__content">
@@ -325,18 +325,19 @@ const getAndShowNavbarMenus = async () => {
 const getAndShowCategoryCourses = async () => {
   const categoryName = getUrlParam("cat");
 
-  const res = await fetch(
-    `http://localhost:4000/v1/courses/category:${categoryName}`
-  );
-
-  console.log(res);
-
+  
+  
   const partToRemove = "/category-info";
   const startIndex = categoryName.indexOf(partToRemove);
   const endIndex = startIndex + partToRemove.length;
-  const updatedCategoryName = categoryName.slice(0, startIndex) + categoryName.slice(endIndex);
+  const updatedCategoryName =
+  categoryName.slice(0, startIndex) + categoryName.slice(endIndex);
   const updatedUrl = `http://localhost:4000/v1/courses/category${updatedCategoryName}`;
-
+  
+  const res = await fetch(
+    `http://localhost:4000/v1/courses/category${updatedCategoryName}`
+  );
+  console.log(res);
   console.log(updatedUrl);
 
   const courses = await res.json();
@@ -373,20 +374,7 @@ const insertCourseBoxHtmlTemplate = (
                     }</a>
                   </div>
                   <div class="course-box__rating">
-                    ${Array(5 - course.courseAverageScore)
-                      .fill(0)
-                      .map(
-                        (score) =>
-                          '<img src="images/svgs/star.svg" alt="rating" class="course-box__star">'
-                      )
-                      .join("")}
-                    ${Array(course.courseAverageScore)
-                      .fill(0)
-                      .map(
-                        (score) =>
-                          '<img src="images/svgs/star_fill.svg" alt="rating" class="course-box__star">'
-                      )
-                      .join("")}
+                 
                   </div>
                 </div>
         
@@ -554,7 +542,7 @@ const getCourseDetails = () => {
   );
   const commentsContentWrapper = $.querySelector(".comments__content");
 
-  fetch(`http://localhost:4000/v1/courses/${courseShortName}`, {
+  fetch(`http://localhost:4000/v1/courses${courseShortName}`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${getToken()}`,
@@ -738,7 +726,7 @@ const getAndShowRelatedCourses = async () => {
   );
 
   const res = await fetch(
-    `http://localhost:4000/v1/courses/related/${courseShortName}`
+    `http://localhost:4000/v1/courses/related${courseShortName}`
   );
   const relatedCourses = await res.json();
 
@@ -774,7 +762,7 @@ const getSessionDetails = async () => {
   );
 
   const res = await fetch(
-    `http://localhost:4000/v1/courses/${courseShortName}/${sessionID}`,
+    `http://localhost:4000/v1/courses${courseShortName}${sessionID}`,
     {
       headers: {
         Authorization: `Bearer ${getToken()}`,
@@ -785,7 +773,7 @@ const getSessionDetails = async () => {
 
   sessionVideoElem.setAttribute(
     "src",
-    `http://localhost:4000/courses/covers/${responseData.session.video}`
+    `http://localhost:4000/courses/covers${responseData.session.video}`
   );
   responseData.sessions.forEach((session) => {
     courseSessionsListElem.insertAdjacentHTML(
@@ -890,7 +878,7 @@ const globalSearch = async () => {
   const articlesSearchResultWrapper =
     document.querySelector("#articles-wrapper");
 
-  const res = await fetch(`http://localhost:4000/v1/search/${searchValue}`);
+  const res = await fetch(`http://localhost:4000/v1/search${searchValue}`);
   const data = await res.json();
 
   if (data.allResultCourses.length) {
