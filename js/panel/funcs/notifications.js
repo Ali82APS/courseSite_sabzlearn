@@ -33,7 +33,7 @@ const insertNotificationHtmlTemplate = (notifications) => {
 
 const seenNotification = async (notifications, notificationID) => {
   const res = await fetch(
-    `http://localhost:4000/v1/notifications/see${notificationID}`,
+    `http://localhost:4000/v1/notifications/see/${notificationID}`,
     {
       method: "PUT",
       headers: {
