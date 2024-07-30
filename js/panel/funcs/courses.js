@@ -19,12 +19,12 @@ const getAllCourses = async () => {
             <td id="price">${course.categoryID}</td>
             <td id="price">
             ${Array(5 - course.courseAverageScore)
-                          .fill(0)
-                          .map(
-                            (score) =>
-                              '<img src="./../../images/svgs/star.svg" alt="rating" class="course-box__star">'
-                          )
-                          .join("")}
+              .fill(0)
+              .map(
+                (score) =>
+                  '<img src="./../../images/svgs/star.svg" alt="rating" class="course-box__star">'
+              )
+              .join("")}
                         ${Array(course.courseAverageScore)
                           .fill(0)
                           .map(
@@ -33,7 +33,9 @@ const getAllCourses = async () => {
                           )
                           .join("")}
                           </td>
-            <td id="price">${course.isComplete === 0 ? "درحال برگزاری" : "تکمیل شده"}</td>
+            <td id="price">${
+              course.isComplete === 0 ? "درحال برگزاری" : "تکمیل شده"
+            }</td>
             <td>
                 <button type="button" class="btn btn-primary" id="edit-btn">ویرایش</button>
             </td>
@@ -48,4 +50,29 @@ const getAllCourses = async () => {
   return courses;
 };
 
-export { getAllCourses };
+const createNewCourses = async () => {
+  const categoryListElem = document.querySelector(".category-list");
+
+  let categoryID = -1;
+
+  const res = await fetch(`http://localhost:4000/v1/category`);
+  const categories = await res.json();
+
+  console.log(categories);
+
+  categories.forEach((category) => {
+    categoryListElem.insertAdjacentHTML(
+      `beforeend`,
+      `
+       <option value="${category._id}">${category.title}</option>
+      `
+    );
+  });
+
+  categoryListElem.addEventListener('change', event => {
+  categoryID = event.target.value
+  console.log(categoryID);
+  })
+};
+
+export { getAllCourses, createNewCourses };

@@ -15,10 +15,9 @@ window.addEventListener("load", () => {
     console.log(admin);
     // Protect Cms Routes
     if (admin.role === "ADMIN") {
-      console.log(adminWelcomeNameElem);
       // Show Admin Name In Cms Homepage
       adminNameElem.innerHTML = admin.name;
-      adminWelcomeNameElem.innerHTML = admin.name;
+      // adminWelcomeNameElem.innerHTML = admin.name;
     } else {
       location.replace("../../login.html");
     }

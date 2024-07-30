@@ -1,7 +1,6 @@
-import { getAllCourses } from "./funcs/courses.js";
+import { createNewCourses, getAllCourses } from "./funcs/courses.js";
 
 window.addEventListener('load', () => {
-    getAllCourses().then(data => {
-        console.log(data);
-    })
+    getAllCourses()
+    createNewCourses()
 })
