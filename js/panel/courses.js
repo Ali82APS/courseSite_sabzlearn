@@ -1,4 +1,6 @@
-import { createNewCourses, getAllCourses, prepareCreateCourseForm } from "./funcs/courses.js";
+import { createNewCourses, getAllCourses, prepareCreateCourseForm, removeCourse } from "./funcs/courses.js";
+
+window.removeCourse = removeCourse
 
 window.addEventListener('load', () => {
     getAllCourses()

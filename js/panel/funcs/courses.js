@@ -1,4 +1,4 @@
-import { getToken } from './../../funcs/utils.js'
+import { getToken, showSwal } from "./../../funcs/utils.js";
 
 let categoryID = -1;
 let status = "start";
@@ -6,6 +6,7 @@ let courseCover = null;
 
 const getAllCourses = async () => {
   const coursesTableElem = document.querySelector(".table tbody");
+  coursesTableElem.innerHTML = ''
 
   const res = await fetch("http://localhost:4000/v1/courses");
   const courses = await res.json();
@@ -48,7 +49,7 @@ const getAllCourses = async () => {
                 <button type="button" class="btn btn-primary" id="edit-btn">ویرایش</button>
             </td>
             <td>
-                <button type="button" class="btn btn-danger" id="delete-btn">حذف</button>
+                <button type="button" onclick="removeCourse('${course._id}')" class="btn btn-danger" id="delete-btn">حذف</button>
             </td>
             </tr>
             `
@@ -92,11 +93,13 @@ const prepareCreateCourseForm = async () => {
     (event) => (status = event.target.value)
   );
 
-  courseCoverElem.addEventListener('change', event => (courseCover = event.target.files[0]))
+  courseCoverElem.addEventListener(
+    "change",
+    (event) => (courseCover = event.target.files[0])
+  );
 };
 
 const createNewCourses = async () => {
-
   const courseNameElem = document.querySelector("#course-name");
   const coursePriceElem = document.querySelector("#course-price");
   const courseDescriptionElem = document.querySelector("#course-description");
@@ -114,13 +117,46 @@ const createNewCourses = async () => {
   formData.append("cover", courseCover);
 
   const res = await fetch(`http://localhost:4000/v1/courses`, {
-    method: 'POST',
+    method: "POST",
     headers: {
       Authorization: `Bearer ${getToken()}`
     },
-    body: formData
-  })
+    body: formData,
+  });
   console.log(res);
+
+  if (res.ok) {
+    showSwal("", "success", "خیلی هم عالی!",
+       () => {
+        getAllCourses()
+       });
+  }
 };
 
-export { getAllCourses, createNewCourses, prepareCreateCourseForm };
+const removeCourse = async (courseID) => {
+
+  console.log(courseID);
+
+  showSwal(
+    "آیا از حذف دوره  اطمینان دارید؟",
+    "question",
+    ["نه","آره"],
+    async (result) => {~
+      const res = await fetch(`http://localhost:4000/v1/courses/${courseID}`, {
+        method: 'DELETE',
+        headers: {
+        Authorization: `Bearer ${getToken()}`
+        }
+
+      })
+      if (res.ok) {
+        showSwal("دوره مدنظر با موفقیت حذف گردید! ", "success", "", () => {
+          getAllCourses()
+        })
+      }
+    }
+  )
+
+}
+
+export { getAllCourses, createNewCourses, prepareCreateCourseForm, removeCourse };
