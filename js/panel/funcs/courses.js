@@ -1,3 +1,9 @@
+import { getToken } from './../../funcs/utils.js'
+
+let categoryID = -1;
+let status = "start";
+let courseCover = null;
+
 const getAllCourses = async () => {
   const coursesTableElem = document.querySelector(".table tbody");
 
@@ -13,7 +19,9 @@ const getAllCourses = async () => {
             ${index + 1}
             </td>
             <td id="id">${course.name}</td>
-            <td id="name">${course.price === 0 ? "رایگان" : course.price.toLocaleString()}</td>
+            <td id="name">${
+              course.price === 0 ? "رایگان" : course.price.toLocaleString()
+            }</td>
             <td id="number">${course.registers}</td>
             <td id="condition">${course.support}</td>
             <td id="price">${course.categoryID}</td>
@@ -42,7 +50,7 @@ const getAllCourses = async () => {
             <td>
                 <button type="button" class="btn btn-danger" id="delete-btn">حذف</button>
             </td>
-        </tr>
+            </tr>
             `
     );
   });
@@ -50,10 +58,12 @@ const getAllCourses = async () => {
   return courses;
 };
 
-const createNewCourses = async () => {
+const prepareCreateCourseForm = async () => {
   const categoryListElem = document.querySelector(".category-list");
 
-  let categoryID = -1;
+  const courseStatusePresellElem = document.querySelector("#presell");
+  const courseStatuseStartElem = document.querySelector("#start");
+  const courseCoverElem = document.querySelector("#course-cover");
 
   const res = await fetch(`http://localhost:4000/v1/category`);
   const categories = await res.json();
@@ -69,10 +79,48 @@ const createNewCourses = async () => {
     );
   });
 
-  categoryListElem.addEventListener('change', event => {
-  categoryID = event.target.value
-  console.log(categoryID);
-  })
+  categoryListElem.addEventListener("change", (event) => {
+    categoryID = event.target.value;
+    console.log(categoryID);
+  });
+  courseStatusePresellElem.addEventListener(
+    "change",
+    (event) => (status = event.target.value)
+  );
+  courseStatuseStartElem.addEventListener(
+    "change",
+    (event) => (status = event.target.value)
+  );
+
+  courseCoverElem.addEventListener('change', event => (courseCover = event.target.files[0]))
 };
 
-export { getAllCourses, createNewCourses };
+const createNewCourses = async () => {
+
+  const courseNameElem = document.querySelector("#course-name");
+  const coursePriceElem = document.querySelector("#course-price");
+  const courseDescriptionElem = document.querySelector("#course-description");
+  const courseShortNameElem = document.querySelector("#course-shortname");
+  const courseSupportElem = document.querySelector("#course-support");
+
+  const formData = new FormData();
+  formData.append("name", courseNameElem.value.trim());
+  formData.append("price", coursePriceElem.value.trim());
+  formData.append("description", courseDescriptionElem.value.trim());
+  formData.append("shortName", courseShortNameElem.value.trim());
+  formData.append("support", courseSupportElem.value.trim());
+  formData.append("categoryID", categoryID);
+  formData.append("status", status);
+  formData.append("cover", courseCover);
+
+  const res = await fetch(`http://localhost:4000/v1/courses`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${getToken()}`
+    },
+    body: formData
+  })
+  console.log(res);
+};
+
+export { getAllCourses, createNewCourses, prepareCreateCourseForm };

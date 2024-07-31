@@ -48,7 +48,7 @@ const getAndShowAllCourses = async () => {
     <div class="col-4">
                 <div class="course-box">
                   <a href="course.html?name=${course.shortName}">
-                    <img src=http://localhost:4000/courses/covers${
+                    <img src=http://localhost:4000/courses/covers/${
                       course.cover
                     } alt="Course img" class="course-box__img" />
                   </a>
@@ -261,7 +261,7 @@ const getAndShowArticles = async () => {
     <div class="article-card">
       <div class="article-card__header">
         <a href="#" class="article-card__link-img">
-          <img src=http://localhost:4000/courses/covers${article.cover} class="article-card__img" alt="Article Cover" />
+          <img src=http://localhost:4000/courses/covers/${article.cover} class="article-card__img" alt="Article Cover" />
         </a>
       </div>
       <div class="article-card__content">
@@ -361,7 +361,9 @@ const insertCourseBoxHtmlTemplate = (
             <div class="col-4">
             <div class="course-box">
               <a href="#">
-                <img src="images/courses/js_project.png" alt="Course img" class="course-box__img" />
+                <img src="http://localhost:4000/courses/covers${
+                        course.cover
+                      }" alt="Course img" class="course-box__img" />
               </a>
               <div class="course-box__main">
                 <a href="#" class="course-box__title">${course.name}</a>
@@ -415,7 +417,7 @@ const insertCourseBoxHtmlTemplate = (
           <div class="course__box-header">
               <div class="course__box-right">
                   <a class="course__box-right-link" href="#">
-                      <img src=http://localhost:4000/courses/covers/${
+                      <img src=http://localhost:4000/courses/covers${
                         course.cover
                       } class="course__box-right-img">
                   </a>

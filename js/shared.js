@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
     const newsLetterSubmitBtn = document.querySelector('#news-letter-submit-btn')
     newsLetterSubmitBtn.addEventListener('click', event => {
         event.preventDefault()
-        console.log('Click');
+        console.log('click');
         createNewNewsLetter()
     })
 })

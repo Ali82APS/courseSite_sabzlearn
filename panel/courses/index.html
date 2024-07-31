@@ -112,21 +112,36 @@
                         <div class="col-6">
                             <div class="name input">
                                 <label class="input-title">نام دوره</label>
-                                <input type="text" isValid="false" placeholder="لطفا نام دوره را وارد کنید...">
+                                <input type="text" id="course-name" isValid="false" placeholder="لطفا نام دوره را وارد کنید...">
                                 <span class="error-message text-danger"></span>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="price input">
                                 <label class="input-title">قیمت دوره</label>
-                                <input type="text" isValid="false" placeholder="لطفا قیمت دوره را وارد کنید...">
+                                <input type="text" id="course-price" isValid="false" placeholder="لطفا قیمت دوره را وارد کنید...">
+                                <span class="error-message text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="number input">
+                                <label class="input-title">توضیحات دوره</label>
+                                <textarea id="course-description" cols="30" rows="15" class="w-100"></textarea>
+                                <input type="text" isValid="false" placeholder="توضیحات دوره را وارد کنید...">
                                 <span class="error-message text-danger"></span>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="number input">
-                                <label class="input-title">تعداد دوره</label>
-                                <input type="text" isValid="false" placeholder="لطفا تعداد دوره را وارد کنید...">
+                                <label class="input-title">تعداد URL</label>
+                                <input type="text" id="course-shortname" isValid="false" placeholder="لطفا تعداد دوره را وارد کنید...">
+                                <span class="error-message text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="number input">
+                                <label class="input-title">تعداد پشتیبانی</label>
+                                <input type="text" id="course-support" isValid="false" placeholder="لطفا نحوه پشتیبانی دوره را وارد کنید...">
                                 <span class="error-message text-danger"></span>
                             </div>
                         </div>
@@ -142,49 +157,30 @@
                         <div class="col-6">
                             <div class="file">
                                 <label class="input-title">عکس دوره</label>
-                                <input type="file" id="file">
+                                <input type="file" id="course-cover">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="bottom-form">
                                 <div class="condition">
-                                    <label class="input-title">موجودی</label>
+                                    <label class="input-title">وضعیت دوره</label>
                                     <div class="radios">
                                         <div class="available">
                                             <label>
-                                                <span>موجود</span>
-                                                <input type="radio" value="avalibe" name="condition" checked>
+                                                <span>پیش فروش</span>
+                                                <input type="radio" id="presell" value="presell" name="condition" checked>
                                             </label>
                                         </div>
                                         <div class="unavailable">
                                             <label>
-                                                <span>ناموجود</span>
-                                                <input type="radio" value="unavailable" name="condition">
+                                                <span>درحال برگزاری</span>
+                                                <input type="radio" id="start" value="start" name="condition">
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="submit-btn">
-                                    <input type="submit" value="افزودن">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="presell">
-                                <label class="input-title">وضعیت دوره</label>
-                                <div class="radios">
-                                    <div class="presell-true">
-                                        <label>
-                                            <span>پیش فروش</span>
-                                            <input type="radio" value="presell" name="presell" checked>
-                                        </label>
-                                    </div>
-                                    <div class="presell-false">
-                                        <label>
-                                            <span>در حال برگزاری</span>
-                                            <input type="radio" value="onperforming" name="presell" >
-                                        </label>
-                                    </div>
+                                    <input type="submit" id="create-course-btn" value="افزودن">
                                 </div>
                             </div>
                         </div>
