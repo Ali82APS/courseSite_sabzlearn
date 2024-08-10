@@ -141,7 +141,7 @@ const removeCourse = async (courseID) => {
     "آیا از حذف دوره  اطمینان دارید؟",
     "question",
     ["نه","آره"],
-    async (result) => {~
+    async (result) => {
       const res = await fetch(`http://localhost:4000/v1/courses/${courseID}`, {
         method: 'DELETE',
         headers: {

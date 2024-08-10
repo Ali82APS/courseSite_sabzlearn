@@ -25,11 +25,11 @@
             </div>
             <div class="sidebar-menu">
                 <ul>
-                    <li class="active-menu"><a href="#"><span>صفحه اصلی</span></a></li>
-                    <li><a href="#"><span>دوره ها</span></a></li>
+                    <li class="active-menu"><a href="../main/index.html"><span>صفحه اصلی</span></a></li>
+                    <li><a href="../courses/index.html "><span>دوره ها</span></a></li>
                     <li><a href="#"><span>منو ها</span></a></li>
                     <li><a href="#"><span>مقاله ها</span></a></li>
-                    <li><a href="#"><span>کاربران</span></a></li>
+                    <li><a href="../users/index.html"><span>کاربران</span></a></li>
                     <li><a href="#"><span>کدهای تخفیف</span></a></li>
                     <li><a href="#"><span>دسته‌بندی‌ها</span></a></li>
                 </ul>
@@ -43,8 +43,8 @@
                             <div class="home-searchbar">
                                 <input type="text" class="search-bar" placeholder="جستجو...">
                             </div>
-                            <div class="home-notification">
-                                <button type="button">
+                            <div class="home-notifications-modal">
+                                <button type="button" id="notifications-icon">
                                     <i class="far fa-bell"></i>
                                 </button>
                             </div>
@@ -80,14 +80,6 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="mode">
-                                <ul class="mode-list">
-                                    <div class="mode-list-item mode-red"></div>
-                                    <div class="mode-list-item mode-blue"></div>
-                                    <div class="mode-list-item mode-dark"></div>
-                                    <div class="mode-list-item mode-light"></div>
-                                </ul>
-                            </div>
                         </div>
                         <div class="home-left">
                             <div class="home-profile">
@@ -97,7 +89,7 @@
                                     </a>
                                 </div>
                                 <div class="home-profile-name">
-                                    <a href="#">احسان خورمهر</a>
+                                    <a href="#" id="admin-name"></a>
                                 </div>
                                 <div class="home-profile-icon">
                                     <i class="fas fa-angle-down"></i>
@@ -116,25 +108,22 @@
                         <div class="col-6">
                             <div class="name input">
                                 <label class="input-title">عنوان</label>
-                                <input type="text" isValid="false" placeholder="لطفا عنوان را وارد کنید...">
+                                <input type="text" id="title" isValid="false" placeholder="لطفا عنوان را وارد کنید...">
+                                <span class="error-message text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="name input">
+                                <label class="input-title">مقصد</label>
+                                <input type="text" id="href" isValid="false" placeholder="لطفا عنوان را وارد کنید...">
                                 <span class="error-message text-danger"></span>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="name input">
                                 <label class="input-title">عنوان</label>
-                                <input type="text" isValid="false" placeholder="لطفا عنوان را وارد کنید...">
-                                <span class="error-message text-danger"></span>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="name input">
-                                <label class="input-title">عنوان</label>
-                                <select class="select">
-                                    <option value="menu">منو</option>
-                                    <option value="menu">منو</option>
-                                    <option value="menu">منو</option>
-                                    <option value="menu">منو</option>
+                                <select class="select" id="parent-menus">
+                                    <option value="-1">دوره پرنت را انتخاب کنید.</option>
                                 </select>
                                 <!-- <input type="text" isValid="false" placeholder="لطفا عنوان را وارد کنید..."> -->
                                 <span class="error-message text-danger"></span>
@@ -144,7 +133,7 @@
                             <div class="bottom-form">
 
                                 <div class="submit-btn">
-                                    <input type="submit" value="افزودن">
+                                    <input type="submit" id="create-menu-btn" value="افزودن">
                                 </div>
                             </div>
                         </div>
@@ -157,6 +146,7 @@
                             <table class="table">
                                 <thead>
                                     <tr>
+                                        <th>شماره منو</th>
                                         <th>عنوان منو</th>
                                         <th>مقصد منو</th>
                                         <th>پرنت منو</th>
@@ -165,50 +155,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>فرانت اند</td>
-                                        <td><a href="#">جاوا اسکریپت</a></td>
-                                        <td>فرانت اند</td>
-                                        <td>
-                                            <button type='button' class='btn btn-primary edit-btn'>ویرایش</button>
-                                        </td>
-                                        <td>
-                                            <button type='button' class='btn btn-danger delete-btn'>حذف</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>فرانت اند</td>
-                                        <td><a href="#">جاوا اسکریپت</a></td>
-                                        <td>فرانت اند</td>
-                                        <td>
-                                            <button type='button' class='btn btn-primary edit-btn'>ویرایش</button>
-                                        </td>
-                                        <td>
-                                            <button type='button' class='btn btn-danger delete-btn'>حذف</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>فرانت اند</td>
-                                        <td><a href="#">جاوا اسکریپت</a></td>
-                                        <td>فرانت اند</td>
-                                        <td>
-                                            <button type='button' class='btn btn-primary edit-btn'>ویرایش</button>
-                                        </td>
-                                        <td>
-                                            <button type='button' class='btn btn-danger delete-btn'>حذف</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>فرانت اند</td>
-                                        <td><a href="#">جاوا اسکریپت</a></td>
-                                        <td>فرانت اند</td>
-                                        <td>
-                                            <button type='button' class='btn btn-primary edit-btn'>ویرایش</button>
-                                        </td>
-                                        <td>
-                                            <button type='button' class='btn btn-danger delete-btn'>حذف</button>
-                                        </td>
-                                    </tr>
+                                    <!-- from [JS] -->
                                 </tbody>
                             </table>
                         </div>
@@ -227,6 +174,10 @@
         <div id="overlay"></div>
     </div>
     <script src="vendor/FontAwesome/FontAwesome.min.js"></script>
+    <script src="vendor/swiperSlider/swiper.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../js/panel/menus.js" type="module"></script>
+    <script src="../../js/panel/shared.js" type="module"></script>
 </body>
 
 </html>
